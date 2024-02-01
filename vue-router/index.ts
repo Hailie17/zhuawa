@@ -7,3 +7,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [...routes]
 })
+router(path, callback) {
+  this.routes[path] = callback || function () {}
+}
