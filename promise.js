@@ -9,3 +9,7 @@ function promise1() {
     }, 2000)
   })
 }
+
+promise1().then(() => {
+  console.log('promise1 resolved callback');
+})
