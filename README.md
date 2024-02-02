@@ -12,4 +12,13 @@
 
 #### 开始
 1. 新建项目 vue create vue-demo
-2. 
+2. 构建路由
+   1. 首页 index.vue
+   2. list.vue
+   3. detail.vue
+   4. 完善 router/index.ts
+   
+3. 构建首页 index.vue
+   1. banner
+   2. slider
+   3. 列表
