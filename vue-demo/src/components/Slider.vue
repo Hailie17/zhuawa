@@ -22,5 +22,9 @@ export default class Slider extends Vue {
   display: flex;
   align-items: center;
   overflow: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0; // 取消滚动条
+  }
 }
 </style>
