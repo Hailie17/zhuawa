@@ -26,5 +26,13 @@ export default class Slider extends Vue {
   &::-webkit-scrollbar {
     width: 0; // 取消滚动条
   }
+
+  .tab-item {
+    flex: 0 0 25%;
+    text-align: center;
+    color: #353535;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
 }
 </style>
