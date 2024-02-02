@@ -33,6 +33,7 @@ export default class Slider extends Vue {
     color: #353535;
     font-size: 1.6rem;
     line-height: 2.6rem;
+    transition: all .3s ease-in-out;
 
     &.active {
       transform: scale(1.2); //放大
