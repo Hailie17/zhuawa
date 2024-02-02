@@ -18,10 +18,28 @@ html {
   height: 100%;
   font-size: 10px;
 }
+body {
+  margin: 1.5rem;
+}
 // 媒体查询
 @media screen and (max-width: 338px) {
   html {
     font-size: 8px !important;
+  }
+}
+@media screen and (min-width: 411px) {
+  html {
+    font-size: 11px !important;
+  }
+}
+@media screen and (min-width: 450px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+@media screen and (min-width: 338px) {
+  html {
+    font-size: 14px !important;
   }
 }
 </style>
