@@ -17,5 +17,10 @@ export default class Slider extends Vue {
 </script>
 
 <style lang="less" scoped>
-
+.slider {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+}
 </style>
