@@ -1,13 +1,13 @@
 <template>
   <div class="slider">
-    <span v-for="(tab, index) in tabs" :key="tab + index" :class="{ active: activeTab === index }" class="tab-item" @click="'changeActiveTab(index)'">{{ tab }}</span>
+    <span v-for="(tab, index) in tabs" :key="tab + index" :class="{ active: activeTab === index }" class="tab-item" @click="changeActiveTab(index)">{{ tab }}</span>
   </div>
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 
 export default class Slider extends Vue {
-  tabs: string[] = ['推荐', '推荐','推荐','推荐','推荐','推荐','推荐','推荐'];
+  tabs: string[] = ['推荐', '小孩','销毁','喜欢','心寒','型号','协会','单独'];
   activeTab = 0;
 
   changeActiveTab(index: number) {
@@ -35,7 +35,7 @@ export default class Slider extends Vue {
     line-height: 2.6rem;
 
     &.active {
-      transform: scale(1.2);
+      transform: scale(1.2); //放大
       color: #3a3a3a;
       font-weight: 600;
     }
