@@ -38,8 +38,6 @@ export default class Slider extends Vue {
       transform: scale(1.2);
       color: #3a3a3a;
       font-weight: 600;
-
-      
     }
   }
 }
