@@ -11,6 +11,7 @@ import Slider from '@/components/Slider.vue'; // @ is an alias to /src
 import Banner from '@/components/Banner.vue';
 
 @Options({
+  
   components: {
     Slider,
     Banner
