@@ -11,6 +11,8 @@ import { Options, Vue } from 'vue-class-component';
 import Slider from '@/components/Slider.vue'; // @ is an alias to /src
 import Banner from '@/components/Banner.vue';
 
+// 改变activeTab后，banner 图也随之改变
+
 @Options({
   components: {
     Slider,
