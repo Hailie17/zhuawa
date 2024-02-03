@@ -28,12 +28,12 @@ export default class Slider extends Vue {
   }
 
   .tab-item {
-    flex: 0 0 25%;
+    flex: 0 0 25%; // 占4个
     text-align: center;
     color: #353535;
     font-size: 1.6rem;
     line-height: 2.6rem;
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; // 动画
 
     &.active {
       transform: scale(1.2); //放大
