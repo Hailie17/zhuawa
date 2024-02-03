@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <slider @onTabChange="onTabChange" />
-    <baner />
+    <!-- 子组件里的属性名 = 父组件里的属性名 -->
+    <banner :src="bannerSrc" /> 
   </div>
 </template>
 
@@ -27,9 +28,9 @@ export default class HomeView extends Vue {
     "https://img.tukuppt.com//ad_preview/00/19/70/5c9a0504de105.jpg!/fw/780",
     "http://pic.616pic.com/bg_w1180/00/14/61/bjDQ7hTsKA.jpg!/fw/1120"
   ];
+  bannerSrc: string = this.BANNER_LIST[0];
   onTabChange(index: number) {
-    console.log(index);
-    
+    this.bannerSrc = this.BANNER_LIST[index]
   }
 }
 </script>
