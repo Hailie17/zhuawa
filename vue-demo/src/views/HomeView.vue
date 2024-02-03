@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <slider />
+    <slider @onTabChange="onTabChange" />
     <baner />
   </div>
 </template>
@@ -27,5 +27,9 @@ export default class HomeView extends Vue {
     "https://img.tukuppt.com//ad_preview/00/19/70/5c9a0504de105.jpg!/fw/780",
     "http://pic.616pic.com/bg_w1180/00/14/61/bjDQ7hTsKA.jpg!/fw/1120"
   ];
+  onTabChange(index: number) {
+    console.log(index);
+    
+  }
 }
 </script>

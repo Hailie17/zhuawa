@@ -12,6 +12,7 @@ export default class Slider extends Vue {
 
   changeActiveTab(index: number) {
     this.activeTab = index
+    this.$emit('onTabChange', index)
   }
 }
 </script>
