@@ -10,6 +10,6 @@ export default class Services {
   static getRecommendList () {
     this.init()
     // 请求回来的结果 res.data 是 HomeRecommendListItem[] 类型的
-    return axios.get<HomeRecommendListItem>('/homeRecommendList').then(res => res.data)
+    return axios.get<HomeRecommendListItem[]>('/homeRecommendList').then(res => res.data)
   }
 }
