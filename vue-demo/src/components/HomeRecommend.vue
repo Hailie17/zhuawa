@@ -49,6 +49,7 @@ h3 {
 
     background: grey;
     border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem -0.4rem rgba(106, 182, 252, 0.5);
 
     img {
       width: 100%;
