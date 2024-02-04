@@ -1,4 +1,5 @@
 import axios from "axios";
+import { HomeRecommendListItem } from "./types";
 
 export default class Services {
   static init () {  // 定义了static静态方法，就不会走构造函数，而是直接执行静态方法
@@ -7,6 +8,8 @@ export default class Services {
 
   // 推荐列表
   static getRecommendList () {
-    return axios.get('/homeRecommendList').then(res => res.data)
+    this.init()
+    // 请求回来的结果 res.data 是 HomeRecommendListItem[] 类型的
+    return axios.get<HomeRecommendListItem>('/homeRecommendList').then(res => res.data)
   }
 }
