@@ -14,6 +14,7 @@
 import { Options, Vue } from 'vue-class-component';
 import { HomeRecommendListItem } from '@/services/types';
 import Services from '@/services';
+import { RouteNames } from '@/router';
 
 @Options({
   components: {
@@ -25,6 +26,9 @@ export default class HomeRecommend extends Vue {
 
   onClick(index: number) {
     // TODO 跳转到列表页
+    this.$router.push({
+      name: RouteNames.List
+    })
   }
 
   async created() {
