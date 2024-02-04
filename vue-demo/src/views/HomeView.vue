@@ -3,6 +3,7 @@
     <slider @onTabChange="onTabChange" />
     <!-- 子组件里的属性名 = 父组件里的属性名 -->
     <banner :src="bannerSrc" /> 
+    <home-recommend />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import { Options, Vue } from 'vue-class-component';
 import Slider from '@/components/Slider.vue'; // @ is an alias to /src
 import Banner from '@/components/Banner.vue';
+import HomeRecommend from '@/components/HomeRecommend.vue';
 
 // 改变activeTab后，banner 图也随之改变
 
 @Options({
   components: {
     Slider,
-    Banner
+    Banner,
+    HomeRecommend
   },
 })
 export default class HomeView extends Vue {

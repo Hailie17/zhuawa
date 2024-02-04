@@ -3,7 +3,8 @@
    <h3>推荐</h3>
    <div class="recommend-container">
     <div class="recommend-item" v-for="(item, index) in list" :key="item.text" @click="onClick(index)">
-      
+      <img :src="item.image" alt="">
+      <span>{{ item.text }}</span>
     </div>
    </div>
   </div>
