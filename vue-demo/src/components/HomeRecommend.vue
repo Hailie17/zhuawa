@@ -28,9 +28,9 @@ export default class HomeRecommend extends Vue {
   onClick(index: number) {
     // TODO 跳转到列表页
     this.activeIndex = index
-    // this.$router.push({
-    //   name: RouteNames.List
-    // })
+    this.$router.push({
+      name: RouteNames.List
+    })
   }
 
   async created() {
