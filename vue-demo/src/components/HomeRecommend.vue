@@ -2,7 +2,7 @@
   <div class="home-recommend">
    <h3>推荐</h3>
    <div class="recommend-container">
-    <div class="recommend-item" v-for="(item, index) in list" :key="item.text" @click="onClick(index)">
+    <div class="recommend-item" v-for="(item, index) in list" :key="item.text" @click="onClick(index)" :class="{ 'recommend-hover' : index === activeIndex}">
       <img :src="item.image" alt="">
       <span>{{ item.text }}</span>
     </div>
@@ -22,13 +22,15 @@ import { RouteNames } from '@/router';
   },
 })
 export default class HomeRecommend extends Vue {
+  activeIndex = -1
   list: HomeRecommendListItem[] = [];
 
   onClick(index: number) {
     // TODO 跳转到列表页
-    this.$router.push({
-      name: RouteNames.List
-    })
+    this.activeIndex = index
+    // this.$router.push({
+    //   name: RouteNames.List
+    // })
   }
 
   async created() {
@@ -37,6 +39,9 @@ export default class HomeRecommend extends Vue {
 }
 </script>
 <style lang="less" scoped>
+.recommend-hover {
+  transform: translate3d(1px, 1px, 0);
+}
 h3 {
   font-size: 1.6rem;
   font-weight: 600;
