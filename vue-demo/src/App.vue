@@ -37,7 +37,7 @@ body {
     font-size: 12px !important;
   }
 }
-@media screen and (min-width: 338px) {
+@media screen and (min-width: 480px) {
   html {
     font-size: 14px !important;
   }

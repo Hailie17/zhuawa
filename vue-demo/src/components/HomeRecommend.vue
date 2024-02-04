@@ -32,3 +32,29 @@ export default class HomeRecommend extends Vue {
   }
 }
 </script>
+<style lang="less" scoped>
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.recommend-container {
+  display: flex;
+  flex-wrap: wrap; // 换行
+  justify-content: space-between;
+
+  .recommend-item {
+    width: 10.6rem;
+    height: 10.6rem;
+    margin-bottom: 3rem;
+
+    background: grey;
+    border-radius: 0.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+    }
+  }
+}
+</style>
