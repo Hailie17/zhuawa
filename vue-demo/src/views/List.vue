@@ -5,7 +5,9 @@
     </div>
     <div class="list-container">
       <div class="list-item" v-for="item in currentList" :key="item.id" @click="toDetail(item.id)">
-        <div class="left-section"></div>
+        <div class="left-section">
+          {{ getRamdomEmoji() }}
+        </div>
         <div class="right-section"></div>
       </div>
     </div>
