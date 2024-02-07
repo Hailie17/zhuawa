@@ -55,6 +55,16 @@ export default class List extends Vue {
 }
 .list-container {
   .list-item {
+    background: white;
+    box-shadow: 0 0 1rem rgba(144, 144, 144, 0.15);
+    height: 10rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 1.5rem;
     .left-section {
       width: 7rem;
       height: 7rem;
@@ -65,6 +75,8 @@ export default class List extends Vue {
       font-size: 2.5rem;
       font-weight: bold;
       color: white;
+      background: #6ab6fc;
+      border-radius: 1rem;
     }
   }
 }
