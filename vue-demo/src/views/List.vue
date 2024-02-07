@@ -22,13 +22,23 @@ import { DetailInfo } from '@/services/types'
   },
 })
 export default class List extends Vue {
+  readonly emojiList = ['😊', '😂', '❤️', '😍', '😒'] // 0, 1, 2, 3, 4
+  // 用户输入的关键字
   search = '';
+  // 请求到的原始数据
   textList: DetailInfo[] = []
 
   get currentList () {
     // 关键字搜索后实际要展示的列表
     return this.textList.filter(item  => item.title.indexOf(this.search) > -1 )
   }
+
+  getRamdomEmoji() {
+    // 获取随机的emoji表情
+    const ramdomIndex = Math.floor(Math.random() * 5) // Math.random() 是 [0, 1), *5 就是 [0, 5)
+    return this.emojiList[ramdomIndex]
+  }
+
   toDetail(id: number) {
     // TODO 跳转到详情页
 
