@@ -58,6 +58,9 @@ export default class List extends Vue {
 
   async created() {
     this.textList = await Services.getList()
+    console.log(this);
+    
+    // this.$store.commit('setDetailInfo', this.textList)
   }
 }
 </script>
