@@ -33,6 +33,7 @@ export default class List extends Vue {
   // 请求到的原始数据
   textList: DetailInfo[] = []
 
+  // computed 属性
   get currentList () {
     // 关键字搜索后实际要展示的列表
     return this.textList.filter(item  => item.title.indexOf(this.search) > -1 )
@@ -56,6 +57,10 @@ export default class List extends Vue {
 </script>
 <style lang="less" scoped>
 .input-container {
+  position: sticky;
+  top: 0;
+  height: 6rem;
+  background: white;
   .search {
     outline-style: none;
     border: 1px solid #ccc;
