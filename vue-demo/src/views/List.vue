@@ -40,7 +40,7 @@ export default class List extends Vue {
 }
 </script>
 <style lang="less" scoped>
-.list-container {
+.input-container {
   .search {
     outline-style: none;
     border: 1px solid #ccc;
@@ -51,6 +51,21 @@ export default class List extends Vue {
     margin: 1rem auto;
     font-size: 1.6rem;
     text-align: center;
+  }
+}
+.list-container {
+  .list-item {
+    .left-section {
+      width: 7rem;
+      height: 7rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+    }
   }
 }
 </style> 
