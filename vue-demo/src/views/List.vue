@@ -20,6 +20,7 @@
 import { Options, Vue } from 'vue-class-component';
 import Services from '@/services'
 import { DetailInfo } from '@/services/types'
+import { RouteNames } from '@/router';
 
 @Options({
   components: {
@@ -47,7 +48,12 @@ export default class List extends Vue {
 
   toDetail(id: number) {
     // TODO 跳转到详情页
-
+    this.$router.push({
+      name: RouteNames.Detail,
+      params: {
+        id: String(id)
+      }
+    })
   }
 
   async created() {
