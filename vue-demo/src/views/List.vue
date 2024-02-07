@@ -8,7 +8,10 @@
         <div class="left-section">
           {{ getRamdomEmoji() }}
         </div>
-        <div class="right-section"></div>
+        <div class="right-section">
+          <span class="title">{{ item.title }}</span>
+          <span class="content">{{ item.content }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -89,6 +92,33 @@ export default class List extends Vue {
       color: white;
       background: #6ab6fc;
       border-radius: 1rem;
+    }
+    .right-section {
+      margin-left: 1rem;
+      flex: 1; // 占据剩下的所有空间
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      .title {
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: left;
+      }
+      .content {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-align: left;
+
+        // 展示两行，超出部分省略号
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+      }
     }
   }
 }
