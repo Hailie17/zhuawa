@@ -13,17 +13,26 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      depth: 1
+    }
   },
   {
     path: '/list',
     name: 'List',
-    component: List
+    component: List,
+    meta: {
+      depth: 2
+    }
   },
   {
     path: '/detail/:id',
     name: 'Detail',
-    component: Detail
+    component: Detail,
+    meta: {
+      depth: 3
+    }
   }
 ]
 
