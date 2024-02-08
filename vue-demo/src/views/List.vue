@@ -47,7 +47,7 @@ export default class List extends Vue {
   }
   
 
-  1
+  
 
   toDetail(id: number) {
     // TODO 跳转到详情页
