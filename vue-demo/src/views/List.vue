@@ -47,6 +47,8 @@ export default class List extends Vue {
   }
   
 
+  
+
   toDetail(id: number) {
     // TODO 跳转到详情页
     this.$router.push({
