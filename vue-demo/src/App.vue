@@ -1,9 +1,24 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!-- 动画 -->
+    <transition :name="transitionName">
+      <router-view/>
+    </transition>
   </div>
 </template>
+<script lang="ts">
+import { watch } from 'vue';
+import { Options, Vue } from 'vue-class-component';
 
+export default class Detail extends Vue {
+  transitionName = '';
+
+  @watch('$route') 
+  onRouteChange(to, from) {
+    this.transitionName = to.mata.depth > from.meta.depth ? 'slide-left' : 'slide-right'
+  }
+}
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -41,5 +56,22 @@ body {
   html {
     font-size: 14px !important;
   }
+}
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: trasform;
+  transition: transform 350ms;
+  position: absolute;
+  overflow: hidden;
+}
+.slide-right-enter,
+.slide-left-leave-active {
+  transform: translate(-100%, 0);
+}
+.slide-left-enter,
+.slide-right-leave-active {
+  transform: translate(100%, 0);
 }
 </style>

@@ -21,6 +21,7 @@ import { Options, Vue } from 'vue-class-component';
 import Services from '@/services'
 import { DetailInfo } from '@/services/types'
 import { RouteNames } from '@/router';
+import store from '../store';
 
 @Options({
   components: {
@@ -58,9 +59,9 @@ export default class List extends Vue {
 
   async created() {
     this.textList = await Services.getList()
-    console.log(this);
     
-    // this.$store.commit('setDetailInfo', this.textList)
+    store.commit('setDetailInfo', this.textList)
+    
   }
 }
 </script>
