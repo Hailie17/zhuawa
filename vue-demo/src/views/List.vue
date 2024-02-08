@@ -45,9 +45,6 @@ export default class List extends Vue {
     const ramdomIndex = Math.floor(Math.random() * 5) // Math.random() 是 [0, 1), *5 就是 [0, 5)
     return this.emojiList[ramdomIndex]
   }
-  
-
-  
 
   toDetail(id: number) {
     // TODO 跳转到详情页
