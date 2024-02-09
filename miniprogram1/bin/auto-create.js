@@ -1,5 +1,6 @@
 const { dashedName } = require('./utils.js')
 const path = require('path') // 引入绝对路径
+const { PageTemplate, ComponentTemplate } = require('./template.js')
 
 const type = process.argv[2] // page component类型
 const name = process.argv[3] // 页面名称
@@ -12,6 +13,8 @@ const lowerDashedName = dashedName(name).toLocaleLowerCase(); // Test-Page => te
 
 switch (type) {
 	case 'page': {
+		const path = `${rootPath}/${lowerDashedName}/index.vue`
+		const content = PageTemplate(name)
 		break;
 	},
 	case 'component': {
