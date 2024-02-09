@@ -6,3 +6,7 @@ const dashedName = name => {
 	const replaced = name.replace(/([A-Z])/g, '-$&')
 	return replaced[0] === '-' ? replaced.slice(1) : replaced
 }
+
+module.exports = {
+	dashedName
+}
