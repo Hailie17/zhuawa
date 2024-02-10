@@ -4,7 +4,19 @@
 
 
 type RequestMethod = "GET" | "POST" | "PUT" | "OPTIONS" | "HEAD" | "DELETE" | "TRACE" | "CONNECT"
+interface RequestParams {
+	header?: object;
+	query?: object;
+	body?: object;
+}
+const baseRequest = (url: string, params: RequestParams, method: RequestMethod = 'GET') => {
+	// 封装通用的请求函数
+	
+}
 
+/**
+ * 封装通用请求
+ */
 const request = async(url: string, params?: object, method: RequestMethod = 'GET', header: Object={}) => {
 	return await new Promise((resolve, reject) => {
 		uni.request({
