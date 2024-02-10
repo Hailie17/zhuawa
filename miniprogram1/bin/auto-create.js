@@ -7,7 +7,7 @@ const name = process.argv[3] // 页面名称
 
 const rootPath = path.relative('./')
 const pagePath = `${rootPath}/src/pages`
-const componentsPath = `${rootPath}/components`
+const componentsPath = `${rootPath}/src/components`
 
 const lowerDashedName = dashedName(name).toLocaleLowerCase(); // Test-Page => test-page
 
