@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 /**
  * 转换大小写
  * 将Test-Page 转化为test-page
@@ -36,6 +37,28 @@ function generateFile(path, content) {
 	}
 }
 
+/**
+ * 把新页面路由添加到 pages.json
+ */
+function addPageToJson(pagePath) {
+	const jsonPath = `${path.resolve('./')}/src/pages.json`
+	// 读取原有 pages.json 的内容
+	const content = fs.readFileSync(jsonPath, {
+		encoding: 'utf-8'
+	})
+	const parseContent = JSON.parse(content)
+	// 更新内容
+	const newContent = JSON.stringify({
+		...parseContent,
+		pages: parseContent.pages.concat({
+			path: pagePath
+		})
+	})
+	// 写入更新
+	fs.writeFileSync(jsonPath, content, {
+		encoding: 'utf-8'
+	})
+}
 
 module.exports = {
 	dashedName, generateFile

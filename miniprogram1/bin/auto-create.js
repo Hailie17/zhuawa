@@ -1,4 +1,4 @@
-const { dashedName } = require('./utils.js')
+const { dashedName, generateFile } = require('./utils.js')
 const path = require('path') // 引入绝对路径
 const { PageTemplate, ComponentTemplate } = require('./template.js')
 
@@ -15,6 +15,9 @@ switch (type) {
 	case 'page': {
 		const path = `${rootPath}/${lowerDashedName}/index.vue`
 		const content = PageTemplate(name)
+		// todo 生成文件
+		generateFile(path, content)
+		// todo 把新页面路由添加到 pages.json
 		break;
 	},
 	case 'component': {
