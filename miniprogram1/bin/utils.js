@@ -53,7 +53,7 @@ function addPageToJson(pagePath) {
 		pages: parseContent.pages.concat({
 			path: pagePath
 		})
-	})
+	},null, 4)
 	// 写入更新
 	fs.writeFileSync(jsonPath, content, {
 		encoding: 'utf-8'
@@ -61,5 +61,5 @@ function addPageToJson(pagePath) {
 }
 
 module.exports = {
-	dashedName, generateFile
+	dashedName, generateFile, addPageToJson
 }
