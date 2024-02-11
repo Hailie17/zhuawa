@@ -11,4 +11,5 @@ export function appendParamsToUrl(url: string = '', params: object) {
 		// www.baidu.com => ?
 		resultUrl = url + (resultUrl.indexOf('?') === -1 ? '?' : '&') + queryStringParams
 	}
+	return queryStringParams
 }

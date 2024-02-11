@@ -3,6 +3,7 @@
  */
 
 import { WxAccountInfo } from "./version"
+import { appendParamsToUrl } from './url'
 
 
 type RequestMethod = "GET" | "POST" | "PUT" | "OPTIONS" | "HEAD" | "DELETE" | "TRACE" | "CONNECT"
@@ -26,6 +27,8 @@ const baseRequest = (url: string, params: RequestParams, method: RequestMethod =
 		...CommonAppendParams,
 	}
 	// 将query 拼接到url 上
+	const fullUrl = appendParamsToUrl(url, queryParams)
+	return request(fullUrl, params.body, method, params.header)
 }
 
 /**
@@ -78,3 +81,4 @@ const commonErrorHandler = e => {
 		})
 	}
 }
+
