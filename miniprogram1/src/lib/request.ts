@@ -2,6 +2,8 @@
  * 封装请求
  */
 
+import { WxAccountInfo } from "./version"
+
 
 type RequestMethod = "GET" | "POST" | "PUT" | "OPTIONS" | "HEAD" | "DELETE" | "TRACE" | "CONNECT"
 interface RequestParams {
@@ -9,9 +11,21 @@ interface RequestParams {
 	query?: object;
 	body?: object;
 }
+const CommonAppendParams = {
+	version: WxAccountInfo.version
+}
+
 const baseRequest = (url: string, params: RequestParams, method: RequestMethod = 'GET') => {
 	// 封装通用的请求函数
-	
+	const queryParams = params.query ? {
+		timestamp: Date.now(), // 大多数业务请求接口不允许有缓存
+		...CommonAppendParams,
+		...params.query
+	} : {
+		timestamp: Date.now(), 
+		...CommonAppendParams,
+	}
+	// 将query 拼接到url 上
 }
 
 /**
