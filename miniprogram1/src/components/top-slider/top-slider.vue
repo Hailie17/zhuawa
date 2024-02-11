@@ -37,7 +37,7 @@ export default class TopSlider extends Vue {
 		line-height: 52upx;
 		transition: all 0.3s ease-in-out;
 	}
-	.tab-item:active {
+	.tab-item.active {
 		transform: scale(1.2);
 		font-weight: bold;
 		color: #3a3a33;
