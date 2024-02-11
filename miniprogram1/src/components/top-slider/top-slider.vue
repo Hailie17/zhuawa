@@ -1,6 +1,6 @@
 <template>
   <view class="TopSlider">
-  	<view class="tab-item" v-for="(tab, index) in tabs" :key=" tab + index" :class="{ active: activeTab === index}" @changeActiveTab(index)>
+  	<view class="tab-item" v-for="(tab, index) in tabs" :key="tab + index" :class="{ active: activeTab === index}" @click=changeActiveTab(index)>
   		{{ tab }}
   	</view>
   </view>
