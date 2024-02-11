@@ -1,19 +1,16 @@
 # miniprogram1
+1. 基于工程化开发小程序项目
+2. auto-create.js
+3. request.js
 
-## Project setup
-```
-pnpm install
-```
+## 需求
+1. 首页
+2. slider
+3. 文章列表
+4. 倒计时和日期展示，首页日期展示 的 abtest
+5. 列表可以搜索的stikey搜索框
+6. 详情页
+7. 封装 request
+8. 虚拟列表 只渲染可视区域的元素，针对大列表的优化
+9. 装饰器  比如有些业务需求，需要统计一个函数的执行时间，或者需要在某个函数开始前上报埋点
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
