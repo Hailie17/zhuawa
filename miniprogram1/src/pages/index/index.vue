@@ -1,14 +1,11 @@
 <template>
 	<view class="content">
-        <image class="logo" src="../../static/logo.png"></image>
-		<view>
-            <text class="title">{{title}}</text>
-        </view>
+		<top-slider></top-slider>
 	</view>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
+	import Vue from 'vue';
 
 	export default Vue.extend({
 		data() {

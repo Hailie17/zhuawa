@@ -19,7 +19,7 @@ export default class TopSlider extends Vue {
 }
 </script>
 <style>
-	// 2upx = 1px
+	/* 2upx = 1px */
 	.TopSlider {
 		margin: 40upx 0;
 		display: flex;
