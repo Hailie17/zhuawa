@@ -16,7 +16,7 @@ const CommonAppendParams = {
 	version: WxAccountInfo.version
 }
 
-const baseRequest = (url: string, params: RequestParams, method: RequestMethod = 'GET') => {
+export const baseRequest = (url: string, params: RequestParams, method: RequestMethod = 'GET') => {
 	// 封装通用的请求函数
 	const queryParams = params.query ? {
 		timestamp: Date.now(), // 大多数业务请求接口不允许有缓存
