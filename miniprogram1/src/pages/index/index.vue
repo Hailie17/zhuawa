@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
 		<top-slider @change=onBannerChange></top-slider>
+		<banner :src='bannerSrc'></banner>
 	</view>
 </template>
 
