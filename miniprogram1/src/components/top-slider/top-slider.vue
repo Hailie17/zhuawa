@@ -15,6 +15,7 @@ export default class TopSlider extends Vue {
 	
 	changeActiveTab(index: number) {
 		this.activeTab = index
+		this.$emit('change', index)
 	}
 }
 </script>
