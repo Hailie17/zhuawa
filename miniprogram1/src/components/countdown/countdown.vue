@@ -1,7 +1,7 @@
 <template>
 	<view >
 		<view class="current-date">
-			
+			{{getCurrentDate()}}
 		</view>
 		<view class="countdown-container">
 			<view class="countdown-circle">
@@ -42,6 +42,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { DateFormat } from '../../lib/date'
 
 @Component
 export default class Countdown extends Vue {
@@ -55,13 +56,16 @@ export default class Countdown extends Vue {
 	
 	timer: any = null
 	
+	getCurrentDate() {
+		return DateFormat.format(Date.now(), 'YYYY-MM-DD HH:mm:ss')
+	}
+	
 	created(){
 		this.timer = setTimeout(this.countDown, this.timeInterval)
 	}
 	
 	countDown() {
 		const leftTime = Math.max(this.expireTime - Date.now(), 0)
-		console.log(this.expireTime - Date.now(),this.expireTime, Date.now(),1)
 		// 将 leftTime 转换成 days hours mins secs
 		this.timestampToCountdown(leftTime)
 		this.timer = setTimeout(this.countDown, this.timeInterval)
@@ -96,6 +100,10 @@ export default class Countdown extends Vue {
 </script>
 
 <style>
+.current-date {
+	text-align: center;
+	font-weight: 600;
+}
 .countdown-container {
 	width: 100%;
 	margin: 50upx 0;
