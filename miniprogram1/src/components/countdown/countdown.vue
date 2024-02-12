@@ -43,6 +43,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { DateFormat } from '../../lib/date'
+import { getTestSchema } from '../../lib/abtest'
 
 @Component
 export default class Countdown extends Vue {
@@ -57,7 +58,21 @@ export default class Countdown extends Vue {
 	timer: any = null
 	
 	getCurrentDate() {
-		return DateFormat.format(Date.now(), 'YYYY-MM-DD HH:mm:ss')
+		const res = getTestSchema('ab_dateformate',[
+			{
+				key: '1',
+				data: 'YYYY-MM-DD'
+			},
+			{
+				key: '2',
+				data: 'YYYY-MM-DD HH:mm:ss'
+			},{
+				key: '3',
+				data: 'YYYY.MM.DD HH:mm:ss'
+			},
+			
+		])
+		return DateFormat.format(Date.now(), res.data)
 	}
 	
 	created(){
