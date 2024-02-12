@@ -1,7 +1,8 @@
 <template>
-	<view class="content">
+	<view class="home">
 		<top-slider @change=onBannerChange></top-slider>
 		<banner :src='bannerSrc'></banner>
+		<countdown :expireTime='defaultExpireTime'></countdown>
 	</view>
 </template>
 
@@ -19,7 +20,8 @@ export default class Home extends Vue {
 		"https://img.tukuppt.com//ad_preview/00/10/15/5c992911709f7.jpg!/fw/780",
 		"https://img.tukuppt.com//ad_preview/00/19/70/5c9a0504de105.jpg!/fw/780",
 		"http://pic.616pic.com/bg_w1180/00/14/61/bjDQ7hTsKA.jpg!/fw/1120"
-	];	bannerSrc = this.BANNER_LIST[0]
+	];
+	defaultExpireTime = new Date('2025/07/02').getTime()	bannerSrc = this.BANNER_LIST[0]
 	onBannerChange(index:number) {
 		this.bannerSrc = this.BANNER_LIST[index]
 	}
@@ -27,26 +29,7 @@ export default class Home extends Vue {
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.home {
+		padding: 30upx;
 	}
 </style>
