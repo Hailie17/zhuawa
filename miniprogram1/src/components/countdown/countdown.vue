@@ -44,6 +44,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { DateFormat } from '../../lib/date'
 import { getTestSchema } from '../../lib/abtest'
+import { measure } from '../../lib/decorator'
 
 @Component
 export default class Countdown extends Vue {
@@ -74,7 +75,7 @@ export default class Countdown extends Vue {
 		])
 		return DateFormat.format(Date.now(), res.data)
 	}
-	
+	@measure
 	created(){
 		this.timer = setTimeout(this.countDown, this.timeInterval)
 	}
