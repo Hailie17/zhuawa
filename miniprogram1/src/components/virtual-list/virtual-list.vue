@@ -74,7 +74,7 @@ export default class VirtualList extends Vue {
 		console.log(id,123);
 		// 跳转详情页
 		uni.navigateTo({
-			url: `/pages/detail/index?id${id}`
+			url: `/pages/detail/index?id=${id}`
 		})
 	}
 	
