@@ -71,7 +71,11 @@ export default class VirtualList extends Vue {
 		return this.emojiList[randomIndex]
 	}
 	toDetail(id: number) {
-		// todo 跳转详情页
+		console.log(id,123);
+		// 跳转详情页
+		uni.navigateTo({
+			url: `/pages/detail/index?id${id}`
+		})
 	}
 	
 	scrollHandler(e: any) {
