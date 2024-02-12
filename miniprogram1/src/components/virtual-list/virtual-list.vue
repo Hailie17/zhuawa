@@ -3,7 +3,17 @@
 		<view class="infinite-list-phantom" :style="{ height: listHeight + 'px' }">
 			<view class="infinite-list" :style="{ transform: getTransform }">
 				<view class="infinite-list-item" v-for="item in visibleData" :key="item.id" @click="toDetail(item.id)">
-					
+					<view class="left-section">
+						{{ getRandomEmoji() }}
+					</view>
+					<view class="right-section">
+						<view class="title">
+							{{ item.title }}
+						</view>
+						<view class="desc">
+							{{ item.content }}
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -35,6 +45,7 @@ export default class VirtualList extends Vue {
 	@Prop({type: Array, default: () => []}) listData: any[]
 	
 	readonly itemSize: number = 150
+	readonly emojiList: string[] = ['😊', '👆', '😟', '😭', '🤯']
 	// 可视区域高度
 	screenHeight: number = 500
 	// 可视区域列表项数量
@@ -55,6 +66,10 @@ export default class VirtualList extends Vue {
 		return this.listData.slice(this.startIndex, Math.min(this.endIndex, this.listData.length))
 	}
 	
+	getRandomEmoji() {
+		const randomIndex = Math.floor(Math.random() * 5)
+		return this.emojiList[randomIndex]
+	}
 	toDetail(id: number) {
 		// todo 跳转详情页
 	}
@@ -69,5 +84,66 @@ export default class VirtualList extends Vue {
 </script>
 
 <style>
-
+.infinite-list-container {
+	height: 100%;
+	overflow: auto;
+	position: relative;
+}
+.infinite-list-phantom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+.infinite-list {
+	position: absolute;
+	top: 0;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+.infinite-list-item {
+	background-color: white;
+	box-shadow: 0 0 24upx rgba(144, 144, 144, 0.15);
+	height: 200upx;
+	border-radius: 10upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20upx;
+	margin-top: 30upx;
+}
+.left-section {
+	width: 140upx;
+	height: 140upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50upx;
+	
+	font-weight: bold;
+	color: white;
+	background: #6ab6fc;
+	border-radius: 20upx;
+}
+.right-section {
+	margin-left: 20upx;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.title {
+	font-size: 28upx;
+	font-weight: 500;
+	text-align: left;
+}
+.desc {
+	margin-top: 20upx;
+	font-size: 24upx;
+	font-weight: 400;
+	text-align: left;
+}
 </style>
