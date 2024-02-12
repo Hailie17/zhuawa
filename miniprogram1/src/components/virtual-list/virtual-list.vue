@@ -85,7 +85,7 @@ export default class VirtualList extends Vue {
 
 <style>
 .infinite-list-container {
-	height: 100%;
+	height: 100vh;
 	overflow: auto;
 	position: relative;
 }
@@ -145,5 +145,11 @@ export default class VirtualList extends Vue {
 	font-size: 24upx;
 	font-weight: 400;
 	text-align: left;
+	/* 展示两行，超出部分省略号 */
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
 }
 </style>
