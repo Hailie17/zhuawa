@@ -2,7 +2,7 @@
 	<view class="home-recommend">
 		<h3>推荐</h3>
 		<view class="recommend-container">
-			<view class="recommend-item" v-for="(item, index) in list" :key='{item.text}' :class="recommend-hover: activeIndex === index" @click="onClick(index)">
+			<view class="recommend-item" v-for="(item, index) in list" :key='{item}' :class="{'recommend-hover': activeIndex === index}" @click="onClick(index)">
 				<img :src="item.image" alt="" />
 				<view class="">
 					{{ item.text }}
@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import Services from '../../services'
 import { HomeRecommendListItem } from '../../services/type'
 
 @Component
@@ -26,7 +27,8 @@ export default class HomeRecommend extends Vue {
 	}
 	
 	async created() {
-		const res = await 
+		this.list = await Services.getHomeRecommendList()
+		console.log(this.list,999);
 	}
 }
 </script>

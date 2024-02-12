@@ -3,6 +3,7 @@
 		<top-slider @change=onBannerChange></top-slider>
 		<banner :src='bannerSrc'></banner>
 		<countdown :expireTime='defaultExpireTime'></countdown>
+		<home-recommend></home-recommend>
 	</view>
 </template>
 
