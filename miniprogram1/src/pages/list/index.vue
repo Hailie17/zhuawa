@@ -4,7 +4,7 @@
 			<input type="text" v-model="search" class="input" placeholder="请输入关键字搜索" />
 		</view>
 		<view class="virtual-list-container" v-if="currentList.length">
-			<virtual-list></virtual-list>
+			<virtual-list :listData='currentList'></virtual-list>
 		</view>
 	</view>
 </template>
